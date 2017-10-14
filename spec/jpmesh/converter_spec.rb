@@ -2,17 +2,30 @@ RSpec.describe Jpmesh do
   MESHCODE = "53394529"
   LONGITUDE = 139.7375
   LATITUDE = 35.68333333
+  MESHCODE_QUARTER = "5339452911"
+  LONGITUDE_QUARTER = 139.73752405
+  LATITUDE_QUARTER = 35.68332003
   LONGITUDE2 = 139.7396
   LATITUDE2 = 35.6878
   
   it "get longitude from mesh code" do
     (longitude, latitude) = Jpmesh::Converter.mesh_to_location(MESHCODE)
-    expect((longitude.abs - LONGITUDE) < 0.001).to eq(true)
+    expect((longitude - LONGITUDE).abs < 0.001).to eq(true)
+  end
+
+  it "get longitude from quater mesh code" do
+    (longitude, latitude) = Jpmesh::Converter.mesh_to_location(MESHCODE_QUARTER)
+    expect((longitude - LONGITUDE_QUARTER).abs < 0.001).to eq(true)
   end
 
   it "get latitude from mesh code" do
    (longitude, latitude) = Jpmesh::Converter.mesh_to_location(MESHCODE)
-    expect((latitude.abs - LATITUDE) < 0.001).to eq(true)    
+    expect((latitude - LATITUDE).abs < 0.001).to eq(true)    
+  end
+
+  it "get latitude from quater mesh code" do
+    (longitude, latitude) = Jpmesh::Converter.mesh_to_location(MESHCODE_QUARTER)
+    expect((latitude - LATITUDE_QUARTER).abs < 0.001).to eq(true)
   end
 
   it "get mesh code from location" do
