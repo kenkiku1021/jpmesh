@@ -1,8 +1,6 @@
 # Jpmesh
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jpmesh`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Convert Japan standard geo mesh code from / to location.
 
 ## Installation
 
@@ -22,7 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Convert mesh code to location
+
+```ruby
+Jpmesh::Converter.mesh_to_location(meshcode)
+```
+
+### Convert location to mesh code
+
+```ruby
+Jpmesh::Converter.location_to_mesh(longitude, latitude, level)
+```
 
 ## Development
 
@@ -32,4 +40,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/jpmesh.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kenkiku1021/jpmesh.
