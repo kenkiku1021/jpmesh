@@ -95,11 +95,13 @@ module Jpmesh
         latitude = 0
         longitude = 22.5 / 3600
       when 3
-        latitude = 15 / 3600
+        latitude = 15.0 / 3600
         longitude = 0
       when 4
-        latitude = 15 / 3600
+        latitude = 15.0 / 3600
         longitude = 22.5 / 3600
+      else
+        raise "invalid half mesh value #{mesh}"
       end
       [longitude, latitude]
     end
@@ -116,8 +118,10 @@ module Jpmesh
         latitude = 7.5 / 3600
         longitude = 0
       when 4
-        latitude = 7/5 / 3600
-        longitude = 11/25 / 3600
+        latitude = 7.5 / 3600
+        longitude = 11.25 / 3600
+      else
+        raise "invalid quarter mesh value #{mesh}"
       end
       [longitude, latitude]
     end
